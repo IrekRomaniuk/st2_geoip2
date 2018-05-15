@@ -1,0 +1,5 @@
+---
+  base_url: "https://download.maxmind.com/app/geoip_download?edition_id=GeoIP2-Country-CSV"
+  date: "20180508"
+  license_key: "ABC"
+  suffux: "zip"

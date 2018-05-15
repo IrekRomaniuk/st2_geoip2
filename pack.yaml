@@ -1,0 +1,9 @@
+---
+ref: geoip2
+name: geoip2
+description: Download, unzip geoip2
+keywords:
+    - maxmind
+version: 0.1.0
+author: Irek Romaniuk
+email: irek.romaniuk@gmail.com
