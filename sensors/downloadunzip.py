@@ -1,4 +1,7 @@
 from st2reactor.sensor.base import PollingSensor
+from requests import get
+from io import BytesIO
+from zipfile import ZipFile
 
 
 class DownloadUnzipSensor(PollingSensor):
