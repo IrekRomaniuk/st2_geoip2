@@ -4,6 +4,6 @@ class pandas_publish(Action):
        
     def run(self, file):
         #_tag = self.config['date']
-        self.logger.info('file: {}\ntype: {}'.format(type(file)))
+        self.logger.info('file of type: {}'.format(type(file)))
         # list = file.split(',')
         return file
