@@ -16,7 +16,7 @@ class DownloadSensor(PollingSensor):
     def setup(self):        
         self._url = self._config['base_url'] 
         self._key = self._config['license_key'] 
-        self._date = self._config['license_key'] 
+        self._date = self._config['date'] 
 
 
     def poll(self):        
