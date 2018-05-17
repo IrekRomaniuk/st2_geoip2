@@ -34,7 +34,7 @@ class DownloadSensor(PollingSensor):
         if request.status_code == 200:         
             zip_file = ZipFile(BytesIO(request.content))
             files = zip_file.namelist()
-            zip_file.extractall("./")
+            zip_file.extractall("/opt/stackstorm/packs/geoip2/")
             payload['files']=files      
         payload['date']=date 
         payload['response']=request.status_code  
