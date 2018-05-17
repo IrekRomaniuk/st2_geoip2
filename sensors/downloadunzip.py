@@ -7,10 +7,9 @@ import datetime
 
 
 class DownloadSensor(PollingSensor):
-    def __init__(self, sensor_service, config):
-        super(HelloSensor, self).__init__(sensor_service=sensor_service, config=config)
+    def __init__(self, sensor_service, config, poll_interval):
+        super(DownloadSensor, self).__init__(sensor_service=sensor_service, config=config, poll_interval=poll_interval)
         self._logger = self.sensor_service.get_logger(name=self.__class__.__name__)
-        self._stop = False
 
     def setup(self):
         urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
