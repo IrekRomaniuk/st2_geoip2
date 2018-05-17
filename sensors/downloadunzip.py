@@ -2,27 +2,37 @@ from st2reactor.sensor.base import PollingSensor
 from requests import get
 from io import BytesIO
 from zipfile import ZipFile
+import urllib3
+import datetime
 
 
-class DownloadUnzipSensor(PollingSensor):
+class DownloadSensor(PollingSensor):
     def __init__(self, sensor_service, config):
         super(HelloSensor, self).__init__(sensor_service=sensor_service, config=config)
         self._logger = self.sensor_service.get_logger(name=self.__class__.__name__)
         self._stop = False
 
     def setup(self):
-        pass
+        urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
+        self._url = self._config['base_url'] 
+        self._key = self._config['license_key'] 
 
-    def poll(self):
-        while not self._stop:
-            self._logger.debug('HelloSensor dispatching trigger...')
-            count = self.sensor_service.get_value('hello_st2.count') or 0
-            payload = {'greeting': 'Yo, StackStorm!', 'count': int(count) + 1}
-            self.sensor_service.dispatch(trigger='hello_st2.event1', payload=payload)
-            self.sensor_service.set_value('hello_st2.count', payload['count'])
+
+    def poll(self):        
+        self._logger.debug('DownloadSensor dispatching trigger...')
+        date=datetime.datetime.today().strftime('%Y%m%d')
+        payload = {}
+        request = get(self._url + '&date=' + date + '&suffix=zip&license_key=' + self._key, verify=False)
+         self._logger.debug('response {} '.format(request))
+        if request.status_code != 200:         
+            zip_file = ZipFile(BytesIO(request.content))
+            files = zip_file.namelist():
+            zip_file.extractall("./etc")
+            payload{'files':files}
+
 
     def cleanup(self):
-        self._stop = True
+        pass
 
     # Methods required for programmable sensors.
     def add_trigger(self, trigger):
