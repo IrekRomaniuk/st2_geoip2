@@ -20,7 +20,7 @@ class DownloadSensor(PollingSensor):
 
 
     def poll(self):        
-        self._logger.debug('####DownloadSensor dispatching trigger...')
+        self._logger.debug('#### DownloadSensor dispatching trigger...')
         if self._date:
             date = self._date
         else:    
@@ -29,7 +29,7 @@ class DownloadSensor(PollingSensor):
         # urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
         requests.packages.urllib3.disable_warnings(InsecureRequestWarning)
         request = get(self._url + '&date=' + date + '&suffix=zip&license_key=' + self._key, verify=False)
-        self._logger.debug('response {} '.format(request.status_code))
+        self._logger.debug('#### Response {} '.format(request.status_code))
         if request.status_code == 200:         
             zip_file = ZipFile(BytesIO(request.content))
             files = zip_file.namelist()
