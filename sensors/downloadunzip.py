@@ -23,7 +23,7 @@ class DownloadSensor(PollingSensor):
         payload = {}
         request = get(self._url + '&date=' + date + '&suffix=zip&license_key=' + self._key, verify=False)
         self._logger.debug('response {} '.format(request))
-        if request.status_code != 200:         
+        if request.status_code == 200:         
             zip_file = ZipFile(BytesIO(request.content))
             files = zip_file.namelist()
             zip_file.extractall("./etc")
