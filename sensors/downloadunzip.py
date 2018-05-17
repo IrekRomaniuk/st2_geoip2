@@ -1,8 +1,10 @@
 from st2reactor.sensor.base import PollingSensor
+import requests
 from requests import get
+from requests.packages.urllib3.exceptions import InsecureRequestWarning
 from io import BytesIO
 from zipfile import ZipFile
-import urllib3
+# import urllib3
 import datetime
 
 
@@ -24,7 +26,8 @@ class DownloadSensor(PollingSensor):
         else:    
             date=datetime.datetime.today().strftime('%Y%m%d')
         payload = {}        
-        urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
+        # urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
+        requests.packages.urllib3.disable_warnings(InsecureRequestWarning)
         request = get(self._url + '&date=' + date + '&suffix=zip&license_key=' + self._key, verify=False)
         self._logger.debug('response {} '.format(request))
         if request.status_code == 200:         
