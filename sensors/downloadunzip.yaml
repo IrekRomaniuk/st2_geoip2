@@ -2,7 +2,7 @@
 class_name: "DownloadSensor"
 entry_point: "downloadunzip.py"
 description: "Download and unzip GeoIP2 db if changed"
-poll_interval: 3600
+poll_interval: 28800
 trigger_types:
   -
     name: "download_unzip"
