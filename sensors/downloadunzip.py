@@ -25,6 +25,7 @@ class DownloadSensor(PollingSensor):
             date = self._date
         else:    
             date=datetime.datetime.today().strftime('%Y%m%d')
+        self._logger.debug('#### date {} '.format(date))    
         payload = {}        
         # urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
         requests.packages.urllib3.disable_warnings(InsecureRequestWarning)
