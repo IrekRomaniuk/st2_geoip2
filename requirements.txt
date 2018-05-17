@@ -1,4 +1,3 @@
 requests>=2.18.4
 urllib3
-io
 zipfile
