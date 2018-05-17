@@ -28,7 +28,8 @@ class DownloadSensor(PollingSensor):
             files = zip_file.namelist()
             zip_file.extractall("./etc")
             payload['files']=files
-        payload['date']=date   
+        payload['date']=date 
+        payload['response']=request.status_code  
 
 
     def cleanup(self):
