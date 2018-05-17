@@ -37,6 +37,8 @@ class DownloadSensor(PollingSensor):
             payload['files']=files      
         payload['date']=date 
         payload['response']=request.status_code  
+        #requests.get("https://hchk.io/f48b4815-cb37-417b-ae93-fafb6faec53f")
+        self.sensor_service.dispatch(trigger=self.trigger, payload=payload)
 
 
     def cleanup(self):
