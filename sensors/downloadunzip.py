@@ -27,8 +27,8 @@ class DownloadSensor(PollingSensor):
             zip_file = ZipFile(BytesIO(request.content))
             files = zip_file.namelist()
             zip_file.extractall("./etc")
-            payload['files']:files
-        payload['date']:date   
+            payload['files']=files
+        payload['date']=date   
 
 
     def cleanup(self):
