@@ -20,7 +20,7 @@ class DownloadSensor(PollingSensor):
 
 
     def poll(self):        
-        self._logger.debug('DownloadSensor dispatching trigger...')
+        self._logger.debug('####DownloadSensor dispatching trigger...')
         if self._date:
             date = self._date
         else:    
