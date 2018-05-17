@@ -1,6 +1,0 @@
----
-    trigger: "geoip2.download_unzip"
-    payload:
-      files: ["GeoIP2-Country-CSV_20180515/GeoIP2-Country-Locations-pt-BR.csv",  "GeoIP2-Country-CSV_20180515/COPYRIGHT.txt"],
-      date: "20180515",   
-      response: 200   
