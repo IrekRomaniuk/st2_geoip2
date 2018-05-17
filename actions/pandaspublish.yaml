@@ -1,0 +1,13 @@
+---
+name: "pandas_publish"
+runner_type: "python-script"
+description: "publish subnets to http://st2/geoip2.txt"
+enabled: true
+entry_point: "pandaspublish.py"
+parameters:
+    file:
+        type: "object"
+        description: "list of files"
+        required: true
+        position: 0
+  

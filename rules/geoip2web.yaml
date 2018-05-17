@@ -1,7 +1,7 @@
 ---
 name: geoip2web
 pack: geoip2
-description: Extract interested subnets from GeoIP2 db and publish
+description: Extract interested subnets from GeoIP2 db
 enabled: true
 trigger:
     type: geoip2.download_unzip

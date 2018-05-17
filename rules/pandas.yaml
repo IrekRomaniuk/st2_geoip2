@@ -1,0 +1,16 @@
+---
+name: geoip2web
+pack: geoip2
+description: Merge GeoIP2 and extract subnets into geopi2.txt file
+enabled: true
+trigger:
+    type: geoip2.download_unzip
+criteria:                              # optional
+        trigger: 
+          type: "exists" 
+          pattern: "files" 
+action:
+    ref: geoip2.pandas_publish
+    parameters:
+        file: {{trigger.file}}
+        
