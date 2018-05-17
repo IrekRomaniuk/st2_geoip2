@@ -1,5 +1,5 @@
 ---
-name: gpandas
+name: pandas
 pack: geoip2
 description: Merge GeoIP2 and extract subnets into geopi2.txt file
 enabled: true
