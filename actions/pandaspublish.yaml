@@ -6,7 +6,7 @@ enabled: true
 entry_point: "pandaspublish.py"
 parameters:
     file:
-        type: "object"
+        type: "string"
         description: "list of files"
         required: true
         position: 0
