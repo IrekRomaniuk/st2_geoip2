@@ -5,9 +5,9 @@ description: "publish subnets to http://st2/geoip2.txt"
 enabled: true
 entry_point: "pandaspublish.py"
 parameters:
-    file:
-        type: "object"
-        description: "list of files"
+    date:
+        type: "string"
+        description: "when updated"
         required: true
         position: 0
   

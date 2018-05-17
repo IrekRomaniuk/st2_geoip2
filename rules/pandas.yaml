@@ -12,5 +12,5 @@ criteria:                              # optional
 action:
     ref: geoip2.pandas_publish
     parameters:
-        file: "{{trigger}}"
+        date: "{{trigger.date}}"
         
