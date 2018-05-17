@@ -25,7 +25,7 @@ class DownloadSensor(PollingSensor):
         self._logger.debug('response {} '.format(request))
         if request.status_code != 200:         
             zip_file = ZipFile(BytesIO(request.content))
-            files = zip_file.namelist():
+            files = zip_file.namelist()
             zip_file.extractall("./etc")
             payload{'files':files}
 
