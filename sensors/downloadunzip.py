@@ -25,7 +25,7 @@ class DownloadSensor(PollingSensor):
             date = self._date
         else:    
             date=datetime.datetime.today().strftime('%Y%m%d')
-        self._logger.debug('#### date {} '.format(date))    
+        self._logger.debug('#### Date {} '.format(date))    
         payload = {}        
         # urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
         requests.packages.urllib3.disable_warnings(InsecureRequestWarning)
@@ -34,7 +34,7 @@ class DownloadSensor(PollingSensor):
         if request.status_code == 200:         
             zip_file = ZipFile(BytesIO(request.content))
             files = zip_file.namelist()
-            zip_file.extractall("./etc")
+            zip_file.extractall("./")
             payload['files']=files      
         payload['date']=date 
         payload['response']=request.status_code  
