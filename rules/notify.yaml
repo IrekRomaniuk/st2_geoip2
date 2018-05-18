@@ -1,0 +1,16 @@
+---
+name: notifyemail
+pack: geoip2
+description: Notify after publishing
+enabled: true
+trigger:
+    type: st2.generic.notifytrigger
+    parameters:
+        action_ref: geoip2.pandas_publish
+action:
+    ref: core.sendmail
+    parameters:
+        subject: "GeoIP2 was updated"
+        body: "{{ trigger.status }}\n{{ trigger.data }}\n{{ trigger.message }}\n\n\n"
+        from: "st2@commonwealth.com"
+        to: "iromaniuk@commonwealth.com"       

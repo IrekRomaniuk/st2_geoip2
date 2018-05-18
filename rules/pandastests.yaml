@@ -1,5 +1,5 @@
 ---
-name: pandas
+name: pandastest
 pack: geoip2
 description: Merge GeoIP2 and extract subnets into geopi2.txt file
 enabled: false
