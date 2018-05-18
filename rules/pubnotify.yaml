@@ -1,5 +1,5 @@
 ---
-name: notifyemail
+name: notifypub
 pack: geoip2
 description: Notify by email after publishing
 enabled: true

@@ -1,7 +1,7 @@
 ---
-name: geoip2email
+name: notifyzip
 pack: geoip2
-description: Download, unzip GeoIP2 db and notify
+description: Notify by email after downloading
 enabled: true
 trigger:
     type: geoip2.download_unzip
