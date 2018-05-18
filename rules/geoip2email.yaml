@@ -2,7 +2,7 @@
 name: geoip2email
 pack: geoip2
 description: Download, unzip GeoIP2 db and notify
-enabled: true
+enabled: false
 trigger:
     type: geoip2.download_unzip
 criteria:                              # optional

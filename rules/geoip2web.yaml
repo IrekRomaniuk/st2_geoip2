@@ -1,8 +1,8 @@
 ---
-name: pandas
+name: geoip2web
 pack: geoip2
-description: Merge GeoIP2 and extract subnets into geopi2.txt file
-enabled: false
+description: Publish geopip2 at https://st2/GeoIP2.txt
+enabled: true
 trigger:
     type: geoip2.download_unzip
 criteria:                              # optional
@@ -12,5 +12,4 @@ criteria:                              # optional
 action:
     ref: geoip2.pandas_publish
     parameters:
-        date: "{{trigger.path}}"
-        
+        path: "{{trigger.path}}"       
