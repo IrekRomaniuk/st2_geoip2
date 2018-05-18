@@ -21,7 +21,7 @@ class pandas_publish(Action):
         # print(loc.head(3))
         result=IPs.merge(loc,left_on='geoname_id',right_on='geoname_id',how='outer')
         # print(result.head(3))
-        # print(IPs.shape,loc.shape,result.shape)
+        print(result.shape)
         block_subnets_pd=result[result['country_name'].isin(block_countries)]['network']
         # print(block_subnets_pd.head(3))
         response = block_subnets_pd.to_csv('/opt/stackstorm/static/webui/GeoIP2.txt', encoding='utf-8', index=False, header=False)
