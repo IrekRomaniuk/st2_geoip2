@@ -11,9 +11,9 @@ class pandas_publish(Action):
         _loc = self.config['loc']
         
         block_countries=_countries.split(',')
-        IPs=pd.read_csv(_ips) 
+        # IPs=pd.read_csv(_ips) 
         print(block_countries)
         print(_ips)
         print(_loc)
-        print(IPs.head(3))  
+        # print(IPs.head(3))  
         return path
