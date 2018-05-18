@@ -1,7 +1,7 @@
 ---
 name: pandastest
 pack: geoip2
-description: Merge GeoIP2 and extract subnets into geopi2.txt file
+description: Extract subnets into geopi2.txt file
 enabled: false
 trigger:
     type: geoip2.download_unzip

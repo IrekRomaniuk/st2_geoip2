@@ -1,7 +1,7 @@
 ---
 name: notifyemail
 pack: geoip2
-description: Notify after publishing
+description: Notify by email after publishing
 enabled: true
 trigger:
     type: st2.generic.notifytrigger

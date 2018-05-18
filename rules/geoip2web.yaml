@@ -1,7 +1,7 @@
 ---
 name: geoip2web
 pack: geoip2
-description: Publish geopip2 at https://st2/GeoIP2.txt
+description: Export subnets to /opt/stackstorm/static/webui/geoip2.txt
 enabled: true
 trigger:
     type: geoip2.download_unzip
