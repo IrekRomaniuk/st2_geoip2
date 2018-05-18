@@ -4,10 +4,10 @@ runner_type: "python-script"
 description: "publish subnets to http://st2/geoip2.txt"
 enabled: true
 entry_point: "pandaspublish.py"
-parameters:
-    date:
+parameters:    
+    path:
         type: "string"
-        description: "when updated"
+        description: "path to downloaded files"
         required: true
-        position: 0
+        position: 0       
   

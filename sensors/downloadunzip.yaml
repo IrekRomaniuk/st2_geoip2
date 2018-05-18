@@ -6,6 +6,6 @@ poll_interval: 28800
 trigger_types:
   -
     name: "download_unzip"
-    description: "List of downloaded files"
+    description: "path to downloaded files, date and response code"
     payload_schema:
       type: "object"        

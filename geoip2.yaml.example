@@ -3,3 +3,5 @@
   date: "20180508"
   license_key: "ABC"
   suffux: "zip"
+  ips: "GeoIP2-Country-Blocks-IPv4.csv"
+  loc: "GeoIP2-Country-Locations-en.csv"
