@@ -35,7 +35,7 @@ class DownloadSensor(PollingSensor):
             zip_file = ZipFile(BytesIO(request.content))
             files = zip_file.namelist()
             zip_file.extractall("/opt/stackstorm/packs/geoip2/")
-            payload['path']=files[0].split('/').[0]    
+            payload['path']=files[0].split('/')[0]    
         payload['date']=date 
         payload['response']=request.status_code  
         #requests.get("https://hchk.io/f48b4815-cb37-417b-ae93-fafb6faec53f")
