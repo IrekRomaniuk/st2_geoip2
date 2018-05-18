@@ -11,9 +11,7 @@ class pandas_publish(Action):
         _loc = self.config['loc']
         
         block_countries=_countries.split(',')
-        # IPs=pd.read_csv(_ips) 
-        print(block_countries)
-        print(_ips)
-        print(_loc)
-        # print(IPs.head(3))  
+        IPs=pd.read_csv("/opt/stackstorm/packs/geoip2/"+path+'/'+_loc) 
+        #print(block_countries, _ips,_loc)
+        print(IPs.head(3))  
         return path

@@ -6,3 +6,4 @@
   ips: "GeoIP2-Country-Blocks-IPv4.csv"
   loc: "GeoIP2-Country-Locations-en.csv"
   countries: "China,Russia,Afganistan,Ukraine,Iraq,Iran,NorthKorea"
+  path: "/opt/stackstorm/packs/geoip2/"
