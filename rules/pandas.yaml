@@ -8,9 +8,9 @@ trigger:
 criteria:                              # optional
         trigger: 
           type: "exists" 
-          pattern: "files" 
+          pattern: "path" 
 action:
     ref: geoip2.pandas_publish
     parameters:
-        date: "{{trigger.date}}"
+        date: "{{trigger.path}}"
         
