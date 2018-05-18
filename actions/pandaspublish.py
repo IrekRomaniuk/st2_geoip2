@@ -11,7 +11,7 @@ class pandas_publish(Action):
         _loc = self.config['loc']
         
         block_countries=_countries.split(',')
-        block_countries = [str(country) country in block_countries]
+        block_countries = [str(country) for country in block_countries]
         print(block_countries[0], _ips,_loc) 
         IPs=pd.read_csv("/opt/stackstorm/packs/geoip2/"+path+'/'+_ips)         
         IPs.drop(['registered_country_geoname_id','represented_country_geoname_id','is_anonymous_proxy','is_satellite_provider'],axis=1,inplace=True)
