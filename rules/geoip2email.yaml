@@ -2,7 +2,7 @@
 name: geoip2email
 pack: geoip2
 description: Download, unzip GeoIP2 db and notify
-enabled: false
+enabled: true
 trigger:
     type: geoip2.download_unzip
 criteria:                              # optional
@@ -12,7 +12,7 @@ criteria:                              # optional
 action:
     ref: core.sendmail
     parameters:
-        subject: "GeoIP2 was updated"
+        subject: "GeoIP2 was downloaded"
         body: "{{ trigger.path }}\n\n\n"
         from: "st2@commonwealth.com"
         to: "iromaniuk@commonwealth.com"
