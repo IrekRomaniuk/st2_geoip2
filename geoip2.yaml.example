@@ -8,3 +8,5 @@
   countries: "China,Russia,Afganistan,Ukraine,Iraq,Iran,NorthKorea"
   zippath: "/opt/stackstorm/packs/geoip2/"
   webpath: "/opt/stackstorm/static/webui/"
+  from: st2@
+  to: me@
