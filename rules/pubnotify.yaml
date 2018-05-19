@@ -2,7 +2,7 @@
 name: notifypub
 pack: geoip2
 description: Notify by email after publishing
-enabled: true
+enabled: false
 trigger:
     type: st2.generic.notifytrigger
     parameters:
