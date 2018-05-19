@@ -10,3 +10,4 @@
   webpath: "/opt/stackstorm/static/webui/"
   from: st2@
   to: me@
+  out: "GeoIP2.txt"

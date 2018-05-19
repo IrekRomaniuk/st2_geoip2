@@ -9,6 +9,7 @@ class pandas_publish(Action):
         _countries = self.config['countries']
         _ips = self.config['ips']
         _loc = self.config['loc']
+        _out = self.config['out']
         
         block_countries=_countries.split(',')
         block_countries = [str(country) for country in block_countries]
@@ -24,5 +25,5 @@ class pandas_publish(Action):
         print(result.shape)
         block_subnets_pd=result[result['country_name'].isin(block_countries)]['network']
         # print(block_subnets_pd.head(3))
-        response = block_subnets_pd.to_csv('/opt/stackstorm/static/webui/GeoIP2.txt', encoding='utf-8', index=False, header=False)
+        response = block_subnets_pd.to_csv('/opt/stackstorm/static/webui/'+_out, encoding='utf-8', index=False, header=False)
         return response
