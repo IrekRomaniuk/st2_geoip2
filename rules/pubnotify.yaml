@@ -13,4 +13,4 @@ action:
         subject: "GeoIP2 was updated"
         body: "{{ trigger.status }}\n{{ trigger.data }}\n{{ trigger.message }}\n\n\n"
         from: "st2@commonwealth.com"
-        to: "iromaniuk@commonwealth.com"       
+        to: "secops@commonwealth.com"       
