@@ -38,7 +38,7 @@ class DownloadSensor(PollingSensor):
             payload['path']=files[0].split('/')[0]    
         payload['date']=date 
         payload['response']=request.status_code  
-        #requests.get("https://hchk.io/f48b4815-cb37-417b-ae93-fafb6faec53f")
+        #requests.get("")
         self.sensor_service.dispatch(trigger='geoip2.download_unzip', payload=payload)
 
 
