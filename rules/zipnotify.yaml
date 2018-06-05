@@ -14,5 +14,5 @@ action:
     parameters:
         subject: "GeoIP2 was downloaded"
         body: "See at https://st2/GeoLite2.txt \n\n\n{{ trigger.path }}\n\n\n"
-        from: "st2@commonwealth.com"
-        to: "secops@commonwealth.com"
+        from: "st2@xyz.com"
+        to: "me@xyz.com"
